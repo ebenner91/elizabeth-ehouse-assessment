@@ -1,0 +1,58 @@
+<div class="liz-header tw-flex tw-justify-between tw-items-center tw-px-[25px] lg:tw-px-[50px] lg:tw-h-[150px] tw-h-[75px] tw-gap-x-[30px]">
+  <div class="lg:tw-hidden">{% render "liz-icons", icon: "hamburger" %}</div>
+  <div class="liz-header__logo tw-max-w-[120px] lg:tw-max-w-[230px]">
+    {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
+    <a href="{{ routes.root_url }}">
+      {{ settings.logo | image_url: width: 600 | image_tag:
+      class: 'liz-header__logo',
+      alt: logo_alt
+      }}
+    </a>
+  </div>
+  <div class="liz-header__menu lg:tw-flex tw-justify-between tw-align-center tw-gap-x-[48px] tw-hidden tw-uppercase tw-font-bold">
+    {% for link in section.settings.menu.links %}
+      <a href="{{ link.url }}" {% if link.title == "Sale"%}class="tw-text-[#FF2500]"{% endif %}>{{ link.title }}</a>
+    {% endfor %}
+  </div>
+  <div class="liz-header__right-content tw-flex tw-items-center tw-justify-between tw-gap-[40px]">
+    <div class="liz-header__search-bar tw-w-[195px] tw-hidden lg:tw-block">
+      <form class="liz-header__search tw-border tw-rounded-full tw-border-[#C4C4C4] tw-px-[20px] tw-py-[10px] tw-text-[13px] tw-flex tw-justify-between tw-items-center" action="/search">
+        <label for="header-search" class="hidden" aria-hidden="true">Search</label>
+        <input id="header-search" type="text" placeholder="Search" name="q" value="{{ search.terms | escape }}"  />
+        <button type="submit" aria-label="Submit search query">{% render "liz-icons", icon: "search" %}</button>
+    </form>
+    </div>
+    <div class="liz-header__sub-right-content tw-flex tw-items-center tw-justify-between tw-gap-x-[30px]">
+      <div class="liz-header__login tw-text-center tw-pr-[30px] tw-border-r tw-border-[#D8D8D8] tw-text-[#4A4A4A] tw-hidden lg:tw-block">
+        <p class="tw-text-[14px]">My Account</p>
+        <p><a href="/account" class="tw-underline tw-text-[12px]">Sign in or Sign up</a></p>
+      </div>
+      <div class="liz-header__cart-icon tw-relative">
+        {% render "liz-icons", icon: "cart" %}
+        {% if cart.item_count > 0 %}
+          <div class="liz-header__cart-count tw-absolute tw-top-[-3px] tw-right-[-5px] lg:tw-top-[-5px] tw-bg-[#005BC4] tw-text-white lg:tw-text-[10px] tw-text-[8px] tw-font-black tw-rounded-full tw-w-[10px] tw-h-[10px] lg:tw-w-[15px] lg:tw-h-[15px] tw-flex tw-justify-center tw-items-center"><span class="tw-hidden lg:tw-block">{{ cart.item_count }}</span></div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Liz Header",
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Liz Header"
+    }
+  ]
+}
+{% endschema %}

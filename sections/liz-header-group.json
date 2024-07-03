@@ -9,28 +9,15 @@
         "text": "FREE SHIPPING & RETURNS ON EVERY ORDER!"
       }
     },
-    "header": {
-      "type": "header",
+    "liz_header_Y6hKQR": {
+      "type": "liz-header",
       "settings": {
-        "logo_position": "middle-left",
-        "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
-        "sticky_header_type": "on-scroll-up",
-        "show_line_separator": true,
-        "color_scheme": "",
-        "menu_color_scheme": "",
-        "enable_country_selector": false,
-        "enable_language_selector": false,
-        "enable_customer_avatar": true,
-        "mobile_logo_position": "center",
-        "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "menu": ""
       }
     }
   },
   "order": [
     "liz_announcement_bar_fw8LUK",
-    "header"
+    "liz_header_Y6hKQR"
   ]
 }
