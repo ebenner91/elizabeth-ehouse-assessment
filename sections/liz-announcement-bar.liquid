@@ -1,0 +1,29 @@
+<div class="announcement-bar color-{{ section.settings.color_scheme }} flex justify-center align-center lg:h-[50px] h-[35px]">
+  <span class="lg:text-[14px] text-[11px] font-bold uppercase leading-[20px]">{{ section.settings.text }}</span>
+</div>
+{% schema %}
+{
+  "name": "Liz Announcement Bar",
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Announcement Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Liz Announcement Bar"
+    }
+  ]
+}
+{% endschema %}
