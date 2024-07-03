@@ -1,6 +1,6 @@
 <div class="liz-header tw-flex tw-justify-between tw-items-center tw-px-[25px] lg:tw-px-[50px] lg:tw-h-[150px] tw-h-[75px] tw-gap-x-[30px]">
   <div class="lg:tw-hidden">{% render "liz-icons", icon: "hamburger" %}</div>
-  <div class="liz-header__logo tw-max-w-[120px] lg:tw-max-w-[230px]">
+  <h1 class="liz-header__logo tw-max-w-[120px] lg:tw-max-w-[230px]">
     {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
     <a href="{{ routes.root_url }}">
       {{ settings.logo | image_url: width: 600 | image_tag:
@@ -8,7 +8,7 @@
       alt: logo_alt
       }}
     </a>
-  </div>
+  </h1>
   <div class="liz-header__menu lg:tw-flex tw-justify-between tw-align-center tw-gap-x-[48px] tw-hidden tw-uppercase tw-font-bold">
     {% for link in section.settings.menu.links %}
       <a href="{{ link.url }}" {% if link.title == "Sale"%}class="tw-text-[#FF2500]"{% endif %}>{{ link.title }}</a>

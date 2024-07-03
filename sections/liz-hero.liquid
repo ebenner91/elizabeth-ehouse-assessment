@@ -1,0 +1,58 @@
+<div class="liz-homepage-hero">
+  
+</div>
+{% schema %}
+{
+  "name": "Liz Hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "text",
+      "id": "subhead_text",
+      "label": "Subhead Text"
+    },
+    {
+      "type": "text",
+      "id": "main_text",
+      "label": "Main Text"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Liz Hero"
+    }
+  ]
+}
+{% endschema %}
