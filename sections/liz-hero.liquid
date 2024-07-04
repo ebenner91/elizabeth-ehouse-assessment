@@ -1,5 +1,39 @@
-<div class="liz-homepage-hero">
-  
+<div class="liz-homepage-hero tw-relative">
+  <picture>
+    <source
+      media="(max-width: 1023px)"
+      srcset="
+        {{ section.settings.mobile_image | image_url: width: 2000 }}
+        ">
+    {{ section.settings.desktop_image |
+      image_url: width: 3000 |
+      image_tag: widths: '1000, 2000, 3000' }}
+  </picture>
+  <style>
+    .liz-homepage-hero__button {
+      background-color: {{ section.settings.color_scheme.settings.button }};
+      color: {{ section.settings.color_scheme.settings.button_label }};
+    }
+
+    .liz-homepage-hero__content {
+      background-color: {{ section.settings.color_scheme.settings.background }};
+    }
+  </style>
+  <div class="liz-homepage-hero__content lg:tw-max-w-[660px] tw-max-w-[calc(100%-20px)] tw-w-full tw-text-center tw-absolute lg:tw-top-1/2 tw-top-3/4 lg:tw-left-0 lg:-tw-translate-y-1/2 lg:tw-mx-[100px] lg:!tw-bg-transparent lg:tw-border-0 tw-border tw-border-[#D8D8D8] tw-mx-[10px] lg:tw-mt-0 tw-pt-[22px] tw-pb-[24px]">
+    {% if section.settings.subhead_text != blank %}
+      <p class="tw-font-medium tw-uppercase lg:tw-text-[20px] tw-text-[14px] lg:tw-pb-[30px] tw-pb-[13px]">{{ section.settings.subhead_text }}</p>
+    {% endif %}
+    {% if section.settings.main_text != blank %}
+      <p class="tw-font-bold lg:tw-text-[80px] tw-text-[36px] lg:tw-pb-[45px] tw-pb-[20px] tw-leading-tight tw-mx-auto">{{ section.settings.main_text }}</p>
+    {% endif %}
+    {% if section.blocks.size > 0 %}
+      <div class="tw-flex lg:tw-justify-between tw-justify-center tw-items-center tw-gap-[20px] tw-flex-wrap">
+        {% for block in section.blocks %}
+          <a class="liz-homepage-hero__button tw-rounded-lg tw-w-[150px] tw-h-[50px] tw-inline-flex tw-justify-center tw-items-center tw-font-bold tw-uppercase tw-text-[14px]" href="{{ block.settings.button_link }}">{{ block.settings.button_text }}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
 </div>
 {% schema %}
 {
