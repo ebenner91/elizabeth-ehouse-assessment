@@ -26,6 +26,7 @@
         "heading",
         "button"
       ],
+      "disabled": true,
       "settings": {
         "image_overlay_opacity": 40,
         "image_height": "large",
@@ -39,37 +40,55 @@
         "show_text_below": false
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "liz_hero_63pi6T": {
+      "type": "liz-hero",
+      "blocks": {
+        "button_cUrePd": {
+          "type": "button",
+          "settings": {
+            "button_link": "\/",
+            "button_text": "Women"
+          }
+        },
+        "button_wUnjjQ": {
+          "type": "button",
+          "settings": {
+            "button_link": "\/",
+            "button_text": "Men"
+          }
+        },
+        "button_7hiyga": {
+          "type": "button",
+          "settings": {
+            "button_link": "\/",
+            "button_text": "Kids"
+          }
+        },
+        "button_iwCGwj": {
+          "type": "button",
+          "settings": {
+            "button_link": "\/",
+            "button_text": "Home"
+          }
+        }
+      },
+      "block_order": [
+        "button_cUrePd",
+        "button_wUnjjQ",
+        "button_7hiyga",
+        "button_iwCGwj"
+      ],
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
+        "desktop_image": "shopify:\/\/shop_images\/hero-desktop.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/hero-image-mobile.jpg",
+        "subhead_text": "IN STORES & ONLINE",
+        "main_text": "50% OFF EVERYTHING",
+        "color_scheme": "scheme-dd2fe8a7-fc65-4f90-8ff0-198ebe975b4d"
       }
     }
   },
   "order": [
     "image_banner",
-    "featured_collection"
+    "liz_hero_63pi6T"
   ]
 }
