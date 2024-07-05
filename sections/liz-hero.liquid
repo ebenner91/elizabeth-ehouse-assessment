@@ -1,14 +1,20 @@
 <div class="liz-homepage-hero tw-relative">
-  <picture class="tw-relative -tw-z-[1]">
-    <source
-      media="(max-width: 1023px)"
-      srcset="
-        {{ section.settings.mobile_image | image_url: width: 2000 }}
-        ">
-    {{ section.settings.desktop_image |
-      image_url: width: 3000 |
-      image_tag: widths: '1000, 2000, 3000' }}
-  </picture>
+  {% if section.settings.mobile_image != blank and section.settings.desktop_image != blank %}
+    <picture class="tw-relative -tw-z-[1]">
+      <source
+        media="(max-width: 1023px)"
+        srcset="
+          {{ section.settings.mobile_image | image_url: width: 2000 }}
+          ">
+      {{ section.settings.desktop_image |
+        image_url: width: 3000 |
+        image_tag: widths: '1000, 2000, 3000' }}
+    </picture>
+  {% else %}
+    <div class="tw-max-h-[650px]">
+      {{ 'image' | placeholder_svg_tag }}
+    </div>
+  {% endif %}
   <style>
     .liz-homepage-hero__button {
       background-color: {{ section.settings.color_scheme.settings.button }};
@@ -29,7 +35,9 @@
     {% if section.blocks.size > 0 %}
       <div class="tw-flex lg:tw-justify-between tw-justify-center tw-items-center tw-gap-[20px] tw-flex-wrap">
         {% for block in section.blocks %}
-          <a class="liz-homepage-hero__button tw-rounded-lg tw-w-[150px] tw-h-[50px] tw-inline-flex tw-justify-center tw-items-center tw-font-bold tw-uppercase tw-text-[14px]" href="{{ block.settings.button_link }}">{{ block.settings.button_text }}</a>
+          {% if block.settings.button_link != blank and block.settings.button_text != blank %}
+            <a class="liz-homepage-hero__button tw-rounded-lg tw-w-[150px] tw-h-[50px] tw-inline-flex tw-justify-center tw-items-center tw-font-bold tw-uppercase tw-text-[14px]" href="{{ block.settings.button_link }}">{{ block.settings.button_text }}</a>
+          {% endif %}
         {% endfor %}
       </div>
     {% endif %}

@@ -1,4 +1,5 @@
 <div class="liz-overlap-hero tw-relative tw-flex lg:tw-justify-end tw-flex-wrap tw-mt-[118px] lg-tw-mt-[55px] tw-mb-[32px] lg:tw-mb-[72px]">
+  {% if section.settings.image != blank %}
   <picture class="liz-overlap-hero__image tw-w-full lg:tw-max-w-[75%]">
     <source
       media="(max-width: 1023px)"
@@ -9,13 +10,19 @@
       image_url: width: 3000 |
       image_tag: widths: '1000, 2000, 3000' }}
   </picture>
+  {% else %}
+    <div class="liz-overlap-hero__image tw-w-full lg:tw-max-w-[75%]">
+      {{ 'image' | placeholder_svg_tag }}
+    </div>
+  {% endif %}
   <div class="liz-overlap-hero__content tw-p-[20px] lg:tw-p-[30px] tw-max-w-[calc(100%-10px)] lg:tw-max-w-[650px] lg:tw-absolute lg:-tw-translate-y-1/2 lg:tw-top-1/2 lg:tw-left-[50px] tw-bg-white lg:tw-mt-0 -tw-mt-[110px]">
     <div class="liz-overlap-hero__content-border tw-border-2 tw-border-[#ECECEC] tw-pt-[25px] tw-pb-[35px] tw-px-[20px] lg:tw-pt-[65px] lg:tw-pb-[75px] lg:tw-px-[80px]">
-    <h2 class="liz-overlap-hero__heading tw-text-[28px] lg:tw-text-[42px] tw-font-bold tw-pb-[15px] lg:tw-pb-[24px] tw-text-[#141414]">{{ section.settings.heading }}</h2>
-    <p class="liz-overlap-hero__subhead tw-text-[14px] lg:tw-text-[16px] tw-pb-[30px] tw-text-[#141414]">{{ section.settings.subhead }}</p>
-    {% if section.settings.button_link != blank %}
-      <a class="liz-overlap-hero__button tw-rounded-lg tw-bg-[#141414] tw-text-white tw-uppercase tw-p-[6px] lg:tw-px-[30px] lg:tw-py-[10px]" href="{{ section.settings.button_link }}">{{ section.settings.button_text }}</a>
-    {% endif %}
+      <h2 class="liz-overlap-hero__heading tw-text-[28px] lg:tw-text-[42px] tw-font-bold tw-pb-[15px] lg:tw-pb-[24px] tw-text-[#141414]">{{ section.settings.heading }}</h2>
+      <p class="liz-overlap-hero__subhead tw-text-[14px] lg:tw-text-[16px] tw-pb-[30px] tw-text-[#141414]">{{ section.settings.subhead }}</p>
+        {% if section.settings.button_link != blank and section.settings.button_text != blank %}
+          <a class="liz-overlap-hero__button tw-rounded-lg tw-bg-[#141414] tw-text-white tw-uppercase tw-p-[6px] lg:tw-px-[30px] lg:tw-py-[10px]" href="{{ section.settings.button_link }}">{{ section.settings.button_text }}</a>
+        {% endif %}
+      </div>
   </div>
 </div>
 {% schema %}
