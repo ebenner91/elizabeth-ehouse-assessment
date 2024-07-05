@@ -86,6 +86,16 @@
         "color_scheme": "scheme-dd2fe8a7-fc65-4f90-8ff0-198ebe975b4d"
       }
     },
+    "liz_overlap_hero_d44pRk": {
+      "type": "liz-overlap-hero",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/image_block_1.jpg",
+        "heading": "Vacay This Way",
+        "subhead": "Everything you need for your summer get away!",
+        "button_link": "\/",
+        "button_text": "SHOP SUMMER ESSENTIALS"
+      }
+    },
     "liz_icon_banner_XzFRpG": {
       "type": "liz-icon-banner",
       "blocks": {
@@ -124,6 +134,7 @@
   "order": [
     "image_banner",
     "liz_hero_63pi6T",
+    "liz_overlap_hero_d44pRk",
     "liz_icon_banner_XzFRpG"
   ]
 }
