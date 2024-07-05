@@ -12,7 +12,7 @@
     "liz_header_Y6hKQR": {
       "type": "liz-header",
       "settings": {
-        "menu": ""
+        "menu": "header-menu"
       }
     }
   },
