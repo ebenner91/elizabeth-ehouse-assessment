@@ -1,5 +1,5 @@
 <div class="liz-homepage-hero tw-relative">
-  <picture>
+  <picture class="tw-relative -tw-z-[1]">
     <source
       media="(max-width: 1023px)"
       srcset="
@@ -19,7 +19,7 @@
       background-color: {{ section.settings.color_scheme.settings.background }};
     }
   </style>
-  <div class="liz-homepage-hero__content lg:tw-max-w-[660px] tw-max-w-[calc(100%-20px)] tw-w-full tw-text-center tw-absolute lg:tw-top-1/2 tw-top-3/4 lg:tw-left-0 lg:-tw-translate-y-1/2 lg:tw-mx-[100px] lg:!tw-bg-transparent lg:tw-border-0 tw-border tw-border-[#D8D8D8] tw-mx-[10px] lg:tw-mt-0 tw-pt-[22px] tw-pb-[24px]">
+  <div class="liz-homepage-hero__content lg:tw-max-w-[660px] tw-max-w-[calc(100%-20px)] tw-w-full tw-text-center lg:tw-absolute lg:tw-top-1/2 lg:tw-mt-0 -tw-mt-[110px] lg:tw-left-0 lg:-tw-translate-y-1/2 lg:tw-mx-[100px] lg:!tw-bg-transparent lg:tw-border-0 tw-border tw-border-[#D8D8D8] tw-mx-[10px] lg:tw-mt-0 tw-pt-[22px] tw-pb-[24px]">
     {% if section.settings.subhead_text != blank %}
       <p class="tw-font-medium tw-uppercase lg:tw-text-[20px] tw-text-[14px] lg:tw-pb-[30px] tw-pb-[13px]">{{ section.settings.subhead_text }}</p>
     {% endif %}
