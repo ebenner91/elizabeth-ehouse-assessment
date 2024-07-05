@@ -85,10 +85,45 @@
         "main_text": "50% OFF EVERYTHING",
         "color_scheme": "scheme-dd2fe8a7-fc65-4f90-8ff0-198ebe975b4d"
       }
+    },
+    "liz_icon_banner_XzFRpG": {
+      "type": "liz-icon-banner",
+      "blocks": {
+        "icon_KPtHad": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/shipping-icon.png",
+            "text": "FREE SHIPPING ON ALL ORDERS"
+          }
+        },
+        "icon_7ttN4N": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/returns-icon.png",
+            "text": "FREE RETURNS ON ALL ORDERS"
+          }
+        },
+        "icon_GY6JqN": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/checkout-icon.png",
+            "text": "SAFE & SECURE CHECKOUT"
+          }
+        }
+      },
+      "block_order": [
+        "icon_KPtHad",
+        "icon_7ttN4N",
+        "icon_GY6JqN"
+      ],
+      "settings": {
+        "bg_color": "linear-gradient(180deg, rgba(250, 251, 251, 1), rgba(247, 248, 248, 1) 100%)"
+      }
     }
   },
   "order": [
     "image_banner",
-    "liz_hero_63pi6T"
+    "liz_hero_63pi6T",
+    "liz_icon_banner_XzFRpG"
   ]
 }

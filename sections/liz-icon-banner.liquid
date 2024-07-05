@@ -1,0 +1,51 @@
+<style>
+  .liz-icon-banner {
+    background: {{ section.settings.bg_color }};
+  }
+</style>
+
+<div class="liz-icon-banner tw-flex tw-justify-between tw-items-center tw-gap-[42px] tw-flex-col lg:tw-flex-row tw-px-[90px] tw-py-[45px] lg:tw-py-[55px] lg:tw-px-[170px]">
+  {% for block in section.blocks %}
+    <div class="liz-icon-banner__icon-wrapper tw-flex tw-justify-center tw-items-center tw-flex-col tw-gap-[25px] tw-max-w-[145px]">
+      <img height="60" width="85" src="{{ block.settings.icon | image_url: height: 60}}" class="liz-icon-banner__icon-image tw-max-h-[50px] lg:tw-max-h-[60px] tw-w-auto">
+      <p class="liz-icon-banner__icon-text tw-uppercase tw-font-bold tw-text-[16px] lg:tw-text-20px tw-text-center">{{ block.settings.text }}</p>
+    </div>
+  {% endfor %}
+</div>
+{% schema %}
+{
+  "name": "Liz Icon Banner",
+  "max_blocks": 3,
+  "settings": [
+    {
+      "id": "bg_color",
+      "label": "Background Color",
+      "type": "color_background",
+      "default": "linear-gradient(#FAFBFB, #F7F8F8)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "icon",
+      "name": "icon",
+      "settings": [
+        {
+          "id": "icon",
+          "label": "Icon",
+          "type": "image_picker"
+        },
+        {
+          "id": "text",
+          "label": "Text",
+          "type": "text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Liz Icon Banner"
+    }
+  ]
+}
+{% endschema %}
